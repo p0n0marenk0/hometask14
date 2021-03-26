@@ -21,9 +21,60 @@
 у которого есть те же поля что у Student + информация о зарплате.*/
 package com.p0n0marenk0;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Locale;
+
 public class Main {
 
     public static void main(String[] args) {
-
+        Student student = new Student();
+        Group group = new Group();
+        ArrayList<Student> students = new ArrayList<>();
+        ArrayList<Group> groups = new ArrayList<>();
+        group.setNameOfGroup("18.01.2021 Introduction");
+        group.setAmountOfLessons(32);
+        group.setAmountOfLessonsOnTheWeek(2);
+        group.setDateOfStartOfTheLessons("18.01.2021");
+        group.setStudents(students);
     }
+
+    private static String dateToString(LocalDate date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+       return  date.format(formatter);
+    }
+
+
+    private static LocalDate stringToDate(String myDate) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy", Locale.ENGLISH);
+        LocalDate date = LocalDate.parse(myDate, formatter);
+        return date;
+    }
+
+    private static String getNameOfGroup(ArrayList<Group> groups ,String dateOfStart, String nameOfCourse){
+        String nameOfGroup = " Совпадений не найдено";
+        for (Group i : groups) {
+            if ((i.getDateOfStartOfTheLessons() == dateOfStart) && (i.getNameOfCourse() == nameOfCourse)) {
+                nameOfGroup = i.getNameOfGroup();
+            }
+        }
+     return nameOfGroup;
+    }
+  //метод который выдает дату последнего занятия
+    private static String getDateOfLastLesson(ArrayList<Group> groups,String nameOfGroup){
+        String dateOfLastLesson = "Нету такой группы в списке";
+        for (Group i : groups) {
+            if (i.getNameOfGroup() == nameOfGroup) {
+                dateOfLastLesson = dateToString(stringToDate((i.getDateOfStartOfTheLessons()) +
+                        (i.getAmountOfLessons()/i.getAmountOfLessonsOnTheWeek())*7));
+
+            }
+        }
+
+        return dateOfLastLesson;
+    }
+
+
+
 }
