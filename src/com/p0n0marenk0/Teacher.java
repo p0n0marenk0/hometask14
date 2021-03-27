@@ -23,4 +23,22 @@ package com.p0n0marenk0;
 
 public class Teacher extends Person {
     private double salary;
+
+    public Teacher(String name, String surname, String dateOfBirth, double salary) {
+        super(name, surname, dateOfBirth);
+        this.salary = salary;
+    }
+
+    public Teacher(double salary) {
+        this.salary = salary;
+    }
+
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
 }

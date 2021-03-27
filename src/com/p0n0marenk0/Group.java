@@ -29,6 +29,19 @@ public class Group {
     private int amountOfLessons;
     private int amountOfLessonsOnTheWeek;
 
+    public Group() {
+    }
+
+    public Group(String nameOfCourse, String dateOfStartOfTheLessons, int amountOfLessons,
+                 int amountOfLessonsOnTheWeek, ArrayList<Student> students, String nameOfGroup) {
+        this.nameOfCourse = nameOfCourse;
+        this.dateOfStartOfTheLessons = dateOfStartOfTheLessons;
+        this.amountOfLessons = amountOfLessons;
+        this.amountOfLessonsOnTheWeek = amountOfLessonsOnTheWeek;
+        this.students = students;
+        this.nameOfGroup = nameOfGroup;
+    }
+
     public ArrayList<Student> getStudents() {
         return students;
     }

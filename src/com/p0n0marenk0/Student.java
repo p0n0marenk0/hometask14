@@ -25,7 +25,30 @@ public class Student extends Person {
     private String phoneNumber;
     private int numberOfStudentInListOfGroup;
 
-    public static void main(String[] args) {
+    public Student(String name, String surname, String dateOfBirth, String phoneNumber, int numberOfStudentInListOfGroup) {
+        super(name, surname, dateOfBirth);
+        this.phoneNumber = phoneNumber;
+        this.numberOfStudentInListOfGroup = numberOfStudentInListOfGroup;
+    }
 
+    public Student(String phoneNumber, int numberOfStudentInListOfGroup) {
+        this.phoneNumber = phoneNumber;
+        this.numberOfStudentInListOfGroup = numberOfStudentInListOfGroup;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public int getNumberOfStudentInListOfGroup() {
+        return numberOfStudentInListOfGroup;
+    }
+
+    public void setNumberOfStudentInListOfGroup(int numberOfStudentInListOfGroup) {
+        this.numberOfStudentInListOfGroup = numberOfStudentInListOfGroup;
     }
 }

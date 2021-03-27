@@ -26,11 +26,35 @@ public class Person {
     private String surname;
     private String dateOfBirth;
 
-
-
-
-    public static void main(String[] args) {
+    public Person(String name, String surname, String dateOfBirth) {
 
     }
 
+    public Person() {
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
 }

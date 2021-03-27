@@ -29,15 +29,16 @@ import java.util.Locale;
 public class Main {
 
     public static void main(String[] args) {
-        Student student = new Student();
-        Group group = new Group();
         ArrayList<Student> students = new ArrayList<>();
         ArrayList<Group> groups = new ArrayList<>();
-        group.setNameOfGroup("18.01.2021 Introduction");
-        group.setAmountOfLessons(32);
-        group.setAmountOfLessonsOnTheWeek(2);
-        group.setDateOfStartOfTheLessons("18.01.2021");
-        group.setStudents(students);
+        Teacher teacher = new Teacher("Vasyl","Ivanov","14.12.1990",5000.0);
+        Student student = new Student("Serhii","Ponomarenko","05.05.1992",
+                "+380630474700",1);
+        Student student1 = new Student("Valentin","Batenko","01.01.1989",
+                "+380633409840",2);
+        Group group = new Group("Java","18.01.2021",32,
+                2,students,"18.01.2021 Introduction");
+
     }
 
     private static String dateToString(LocalDate date) {
