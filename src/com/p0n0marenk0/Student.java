@@ -51,4 +51,8 @@ public class Student extends Person {
     public void setNumberOfStudentInListOfGroup(int numberOfStudentInListOfGroup) {
         this.numberOfStudentInListOfGroup = numberOfStudentInListOfGroup;
     }
+
+    public String convertName() {
+        return getName().charAt(0) + ". " + getSurname();
+    }
 }
