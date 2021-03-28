@@ -58,7 +58,7 @@ public class Main {
         printSortedListOfStudents(students);
         //addStudent(students);
         System.out.println("delete on number");
-        removeStudentFromList(students, 2);
+        removeStudentFromList(students, 3);
         printSortedListOfStudents(students);
         System.out.println("===========================");
         System.out.println("delete on surname");
@@ -83,7 +83,7 @@ public class Main {
     private static void removeStudentFromList(ArrayList<Student> students, String surname) {
         String searсh = "Студента с фамилией: " + surname + " нет в этом списке";
         int count = -1;
-        for (int i = 0; i <students.size(); i++) {
+        for (int i = 0; i < students.size(); i++) {
             if (Objects.equals(students.get(i).getSurname(), surname)) {
                 searсh = "Студент по фамилии: " + students.get(i).getSurname() + " в списке с номером: "
                         + students.get(i).getNumberOfStudentInListOfGroup() + "Удален!";
@@ -97,7 +97,6 @@ public class Main {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         return date.format(formatter);
     }
-
 
     private static LocalDate stringToDate(String myDate) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy", Locale.ENGLISH);
@@ -154,6 +153,7 @@ public class Main {
         int numStInGroup = sc.nextInt();
         Student student = new Student(name, surname, dateOfBirth, phoneNum, numStInGroup);
         students.add(students.size(), student);
+
     }
 
     private static String checkStudentInTheListBySurname(ArrayList<Student> students, String surname) {

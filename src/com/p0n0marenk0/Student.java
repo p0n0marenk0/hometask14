@@ -21,9 +21,30 @@
 у которого есть те же поля что у Student + информация о зарплате.*/
 package com.p0n0marenk0;
 
+import java.util.ArrayList;
+
 public class Student extends Person {
     private String phoneNumber;
     private int numberOfStudentInListOfGroup;
+    private ArrayList<Group> groups = new ArrayList<>();
+    private String studentsNameOfGroup;
+
+    public ArrayList<Group> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(ArrayList<Group> groups) {
+        this.groups = groups;
+    }
+
+        public String getStudentsNameOfGroup() {
+        return studentsNameOfGroup;
+    }
+
+    public void setStudentsNameOfGroup(String studentsNameOfGroup) {
+        this.studentsNameOfGroup = studentsNameOfGroup;
+    }
+
 
     public Student(String name, String surname, String dateOfBirth, String phoneNumber, int numberOfStudentInListOfGroup) {
         super(name, surname, dateOfBirth);
@@ -34,6 +55,10 @@ public class Student extends Person {
     public Student(String phoneNumber, int numberOfStudentInListOfGroup) {
         this.phoneNumber = phoneNumber;
         this.numberOfStudentInListOfGroup = numberOfStudentInListOfGroup;
+    }
+
+    public Student(String studentsNameOfGroup) {
+        this.studentsNameOfGroup = studentsNameOfGroup;
     }
 
     public String getPhoneNumber() {
